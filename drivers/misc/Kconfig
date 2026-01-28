@@ -638,6 +638,17 @@ source "drivers/misc/ocxl/Kconfig"
 source "drivers/misc/cardreader/Kconfig"
 source "drivers/misc/fpr_FingerprintCard/Kconfig"
 source "drivers/misc/qrc/Kconfig"
+
+config NTSYNC
+	tristate "NT synchronization primitives"
+	depends on FILE_LOCKING
+	help
+	  This driver provides a set of synchronization primitives that are
+	  compatible with the Windows NT kernel synchronization primitives.
+	  This is useful for implementing the NTSYNC interface in Wine.
+
+	  If unsure, say N.
+
 endmenu
 
 config OKL4_USER_VIPC
